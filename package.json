@@ -1,0 +1,84 @@
+{
+  "name": "contextboard-lx",
+  "displayName": "ContextBoard — Workspace Context Switcher",
+  "description": "Save and switch your dev workspace context (terminal cwd, git branch, open files) in one click. No cloud required.",
+  "version": "1.0.1",
+  "publisher": "LxStudio",
+  "icon": "icon.png",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lm203688/contextboard-lx.git"
+  },
+  "engines": { "vscode": "^1.80.0" },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "context",
+    "workspace switcher",
+    "terminal cwd",
+    "git branch",
+    "multi project",
+    "dev flow"
+  ],
+  "activationEvents": [
+    "onCommand:contextboard.saveContext",
+    "onCommand:contextboard.switchToContext",
+    "onView:contextboard-tree"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "contextboard.saveContext",       "title": "ContextBoard: Save Current Context",     "category": "ContextBoard" },
+      { "command": "contextboard.switchToContext",   "title": "ContextBoard: Switch to Saved Context",  "category": "ContextBoard" },
+      { "command": "contextboard.editContext",       "title": "ContextBoard: Edit Context",             "category": "ContextBoard" },
+      { "command": "contextboard.deleteContext",     "title": "ContextBoard: Delete Context",           "category": "ContextBoard" },
+      { "command": "contextboard.refreshTree",       "title": "ContextBoard: Refresh List",             "category": "ContextBoard" },
+      { "command": "contextboard.upgradeToPro",      "title": "ContextBoard: Upgrade to Pro",           "category": "ContextBoard" },
+      { "command": "contextboard.activatePro",       "title": "ContextBoard: Activate Pro License",     "category": "ContextBoard" }
+    ],
+    "keybindings": [
+      { "command": "contextboard.saveContext",     "key": "ctrl+alt+c",   "when": "editorFocus" },
+      { "command": "contextboard.switchToContext", "key": "ctrl+alt+shift+c", "when": "editorFocus" }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "contextboard", "title": "ContextBoard", "icon": "$(workflow)" }
+      ]
+    },
+    "views": {
+      "contextboard": [
+        { "id": "contextboard-tree", "name": "Saved Contexts" }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        { "command": "contextboard.saveContext",  "when": "view == contextboard-tree", "group": "navigation@1" },
+        { "command": "contextboard.upgradeToPro", "when": "view == contextboard-tree", "group": "navigation@2" }
+      ],
+      "view/item/context": [
+        { "command": "contextboard.switchToContext", "when": "view == contextboard-tree && viewItem =~ /ctx_/"  },
+        { "command": "contextboard.editContext",     "when": "view == contextboard-tree && viewItem =~ /ctx_/"  },
+        { "command": "contextboard.deleteContext",   "when": "view == contextboard-tree && viewItem =~ /ctx_/"  }
+      ]
+    },
+    "configuration": {
+      "title": "ContextBoard",
+      "properties": {
+        "contextboard.verifyEndpoint": {
+          "type": "string",
+          "default": "https://snapmark-license.61960005.workers.dev/verify",
+          "description": "License verification endpoint."
+        },
+        "contextboard.buyoutLink": {
+          "type": "string",
+          "default": "https://snapmark-checkout.pages.dev/?priceId=pri_01m7wm2s02sxcexg1r8b1sgxce",
+          "description": "Paddle checkout link for ContextBoard Pro ($7 one-time)."
+        }
+      }
+    }
+  },
+  "scripts": {},
+  "dependencies": {}
+}
