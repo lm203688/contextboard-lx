@@ -35,7 +35,7 @@ Perfect for developers juggling multiple projects or switching between feature b
 ## Privacy & data handling
 
 - All contexts are stored locally in VS Code's `globalState`. Nothing leaves your machine.
-- The only network call is to the license verification endpoint (`snapmark-license.61960005.workers.dev`) when activating a Pro license key.
+- The only network call is to the license verification endpoint (`snapmark-license.463102527.workers.dev`) when activating a Pro license key.
 - See [privacy-policy.html](privacy-policy.html) for full details.
 
 ## Tech details

@@ -34,7 +34,7 @@ Unlock additional capabilities:
 - CWD captured from `vscode.workspace.workspaceFolders[0].uri.fsPath`.
 - Git branch via `git rev-parse --abbrev-ref HEAD` run locally.
 - All data stored in VS Code `globalState` — local JSON only.
-- License verification: single POST to `snapmark-license.61960005.workers.dev/verify`; transmits only the license key string.
+- License verification: single POST to `snapmark-license.463102527.workers.dev/verify`; transmits only the license key string.
 
 ### Who is this for?
 Developers who juggle multiple repositories daily — frontend/backend pairs, monorepos with independent services, or feature branches that require separate terminal setups.

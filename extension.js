@@ -32,6 +32,17 @@ function registerCommands(context) {
   const tree = new ContextTreeProvider(context);
   context.subscriptions.push(vscode.window.registerTreeDataProvider('contextboard-tree', tree));
 
+  // VS Code renders a tree view lazily: the panel shows a spinner until the provider fires
+  // onDidChangeTreeData at least once *after* the view has mounted. Nothing else fires it for
+  // this view, so the panel stayed blank on first open. Run the refresh command on a short
+  // timer so at least one refresh lands once the panel exists.
+  let refreshTicks = 0;
+  const refreshTimer = setInterval(() => {
+    void vscode.commands.executeCommand('contextboard.refreshTree');
+    if (++refreshTicks >= 40) clearInterval(refreshTimer);
+  }, 250);
+  context.subscriptions.push({ dispose: () => clearInterval(refreshTimer) });
+
   // Refresh button
   context.subscriptions.push(vscode.commands.registerCommand('contextboard.refreshTree', () => {
     tree.refresh();
