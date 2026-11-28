@@ -2,7 +2,7 @@
   "name": "contextboard-lx",
   "displayName": "ContextBoard — Workspace Context Switcher",
   "description": "Save and switch your dev workspace context (terminal cwd, git branch, open files) in one click. No cloud required.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "LxStudio",
   "icon": "icon.png",
   "screenshots": [
@@ -78,7 +78,7 @@
         },
         "contextboard.buyoutLink": {
           "type": "string",
-          "default": "https://snapmark-checkout.pages.dev/?priceId=pri_01m7wm2s02sxcexg1r8b1sgxce",
+          "default": "https://snapmark-t3-checkout.pages.dev/pay?priceId=pri_01m7wm2s02sxcexg1r8b1sgxce",
           "description": "Paddle checkout link for ContextBoard Pro ($7 one-time)."
         }
       }

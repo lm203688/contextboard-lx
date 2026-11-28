@@ -25,6 +25,10 @@ Perfect for developers juggling multiple projects or switching between feature b
 - [Phase 2 - Upcoming] Environment variable notes attached to each context.
 - [Phase 2 - Upcoming] AI-powered context suggestions (bring your own API key).
 
+**How to buy:** Click **ContextBoard: Upgrade to Pro ($7)** — the secure Paddle checkout opens automatically. Your license activates instantly after payment.
+
+[Buy ContextBoard Pro — $7 one-time](https://snapmark-t3-checkout.pages.dev/pay?priceId=pri_01m7wm2s02sxcexg1r8b1sgxce)
+
 ## Quick start
 
 1. Open the **ContextBoard** panel from the activity bar (workflow icon).
